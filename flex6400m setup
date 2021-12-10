@@ -1,0 +1,22 @@
+Linux OS used PopOS
+Radio Flex 6400m
+sudo apt update/upgrade
+use the Pop Shop to get 
+	CQRLog
+	WSJT-X
+you will also want xlog to get this step 1 
+	sudo apt-get update -y
+	sudo apt-get install -y xlog
+to connect to the Flex i am running a V3 Flex,  download the following
+	nCAT: https://github.com/arodland/nCAT
+	nDAX: https://github.com/arodland/nDAX
+Next step is to make both of those downloads exexutable with popOS there are a couple way to do this.  on is to right click on them in the downloads folder and change the setting to allow it to be an executable.  the other is to chmod in the terminal.
+Next turn on your radio and verify its on the same Lan as the computer you are using to see it. I have tried cross network however it does not go through as it does on the windows client.
+when the radio is turned on and completely operational.  
+open terminal /home/"user"/Downloads/nDAX-linux-amd64 -station Maestro -slice A -daxch 1 -source flex.sliceA.rx -sink flex.sliceA.tx    this will open the DAX (Audio) connection to DAX1.  change clice and channel number for slice you are looking for. you can have as many terminals open for the number of slices you have open.  
+open another termnal windowk,  /home/"user"/Downloads//nCAT-linux-amd64 -station Maestro -slice A -listen :4532  this will open the CAT Control lines to the radio for "X" slice.  
+do not close terminal windows.  
+termianls and commands will need to be entered each time unless you want to set the commands as auto start programs.  just remember to turn the radio on and have it running fully before turning on your computer.
+the logging programs will use RigCtrl D for the radio and X port that you assigned it.  the typical port numbers are :4532 :4533 :4534 :4535.   depedning how many slicess you have.  these will work with the flext 6600M as well.
+for the Digital communicaton programs you will select the proper DAX line that for the slice you want to monitor.  
+as a side note,  i have not gotten cqrlog to properly use the CAT line for frequency.  however it is still the best program to use for inegration with wsjt-x. Xlog and wsjt-s are able to properly use RgCtrlD properly.  
