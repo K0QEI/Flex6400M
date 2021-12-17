@@ -26,4 +26,4 @@ Setting for CQRLog
 	device to 127.0.0.1:4532
 	poll rate to 1000
 	port to 14532
-	do have select "Run rigcntld when program starts"
+	select "Run rigcntld when program starts"
